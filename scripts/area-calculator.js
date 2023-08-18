@@ -1,3 +1,36 @@
+function getInputValueById(fieldId) {
+    const inputField = document.getElementById(fieldId);
+    const inputFieldValueString = inputField.value;
+    const inputValue = parseFloat(inputFieldValueString);
+    return inputValue;
+}
+
+function setElementValueById(elementId, element) {
+    const showArea = document.getElementById(elementId);
+    showArea.innerText = element;
+}
+
+function calculateParallelogramArea() {
+    const parallelogramBase = getInputValueById('parallelogram-base');
+    const parallelogramHeight = getInputValueById('parallelogram-height');
+
+    const area = parallelogramBase * parallelogramHeight;
+
+    setElementValueById('parallelogram-area', area);
+
+}
+
+function calculateEllipseArea() {
+    const majorRadius = getInputValueById('ellipse-major-radius');
+    const minorRadius = getInputValueById('ellipse-minor-radius');
+
+    const area = 3.1416 * majorRadius * minorRadius;
+
+    setElementValueById('ellipse-area', area);
+}
+
+
+
 function calculateTriangleArea() {
 
     const baseField = document.getElementById('triangle-base');
